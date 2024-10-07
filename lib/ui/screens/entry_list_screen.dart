@@ -24,7 +24,7 @@ class EntryListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Entries'),
+        title: const Text('Entries List'),
       ),
       body: BlocBuilder<EntryBloc, EntryState>(
         builder: (context, state) {

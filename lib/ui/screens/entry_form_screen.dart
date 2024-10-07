@@ -72,10 +72,21 @@ class _EntryFormScreenState extends State<EntryFormScreen> {
                 validator: (val) =>
                     val == null || val.isEmpty ? 'Please enter a description' : null,
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _submit,
-                child: Text(isEditing ? 'Update' : 'Add'),
+              const SizedBox(height: 40),
+              SizedBox(
+                height: 45,
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: _submit,
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  child: Text(
+                    isEditing ? 'Update' : 'Add',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
