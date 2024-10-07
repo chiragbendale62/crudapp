@@ -15,6 +15,7 @@ class DatabaseHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
+
     // Initialize the database
     _database = await _initDatabase();
     return _database!;
@@ -23,6 +24,7 @@ class DatabaseHelper {
   Future<Database> _initDatabase() async {
     // Get the default database location
     String path = join(await getDatabasesPath(), 'entries.db');
+
     // Open the database, creating it if it doesn't exist
     return await openDatabase(
       path,
@@ -45,7 +47,11 @@ class DatabaseHelper {
   // CRUD operations
   Future<int> insertEntry(EntryModel entry) async {
     final db = await database;
-    return await db.insert('entries', entry.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    return await db.insert(
+      'entries',
+      entry.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 
   Future<List<EntryModel>> getEntries() async {

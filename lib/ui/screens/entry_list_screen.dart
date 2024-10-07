@@ -24,6 +24,7 @@ class EntryListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue.shade300,
         title: const Text('Entries List'),
       ),
       body: BlocBuilder<EntryBloc, EntryState>(
@@ -66,6 +67,7 @@ class EntryListScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue.shade300,
         onPressed: () => _navigateToForm(context),
         child: const Icon(Icons.add),
       ),

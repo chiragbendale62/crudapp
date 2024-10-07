@@ -59,12 +59,14 @@ class _EntryFormScreenState extends State<EntryFormScreen> {
           key: _formKey,
           child: Column(
             children: [
+              const SizedBox(height: 50),
               TextFormField(
                 initialValue: _name,
                 decoration: const InputDecoration(labelText: 'Name'),
                 onSaved: (val) => _name = val!,
                 validator: (val) => val == null || val.isEmpty ? 'Please enter a name' : null,
               ),
+              const SizedBox(height: 10),
               TextFormField(
                 initialValue: _description,
                 decoration: const InputDecoration(labelText: 'Description'),
@@ -72,17 +74,17 @@ class _EntryFormScreenState extends State<EntryFormScreen> {
                 validator: (val) =>
                     val == null || val.isEmpty ? 'Please enter a description' : null,
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 45),
               SizedBox(
                 height: 45,
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: _submit,
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade300),
                   child: Text(
                     isEditing ? 'Update' : 'Add',
                     style: const TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 17,
                     ),
                   ),

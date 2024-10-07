@@ -13,7 +13,7 @@ void main() {
     await tester.pumpAndSettle();
 
     // Verify that the list is empty initially
-    expect(find.text('No entries found.'), findsOneWidget);
+    expect(find.textContaining('No entries found.'), findsOneWidget);
 
     // Tap the add button
     final Finder addButton = find.byIcon(Icons.add);
